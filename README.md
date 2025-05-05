@@ -1,54 +1,38 @@
-# React + TypeScript + Vite
+# Countdown to Release - 100 Days
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the **Countdown to Release** project! This is a React + TypeScript application that provides a countdown timer for a special event.
 
-Currently, two official plugins are available:
+## Live Website
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+You can view the live website here: [Countdown to Release](https://countdown-days-to-release.netlify.app)
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Responsive Design**: The website is fully responsive and adapts to different screen sizes.
+- **Countdown Timer**: Displays the remaining time until the release date.
+- **Interactive Icons**: Links to social media profiles with animations and tooltips.
+- **Red Panda Animation**: A fun animated red panda component.
+- **Dark and Light Mode**: Automatically adapts to the user's system preferences.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Technologies Used
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **React**: For building the user interface.
+- **TypeScript**: For type safety and better development experience.
+- **Styled-Components**: For styling components with CSS-in-JS.
+- **GSAP**: For animations.
+- **Moment-Timezone**: For handling time zones.
+- **Vite**: For fast development and build tooling.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Project Structure
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+The project is organized as follows:
+
+## How to Run Locally
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/EyalShapiro/countdown-100-days-to-release.git
+   cd countdown-100-days-to-release
+   npm install
+   npm run dev
+   ```

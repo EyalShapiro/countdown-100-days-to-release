@@ -4,14 +4,26 @@ import { Layout } from './components/Layout'
 import { CountdownTimer } from './components/CountdownTimer'
 import { IconLinks } from './components/IconLinks'
 import texts from './texts.json'
+import { RedPanda } from './components/RedPanda'
 
 const App: React.FC = () => {
   return (
-    <Layout>
-      <Title>{texts.title}</Title>
-      <CountdownTimer />
-      <IconLinks />
-    </Layout>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        position: 'relative',
+      }}
+    >
+      <Layout>
+        <Title>{texts.title}</Title>
+        <CountdownTimer />
+        <IconLinks />
+      </Layout>
+      <RedPanda />
+    </div>
   )
 }
 const Title = styled.h1`

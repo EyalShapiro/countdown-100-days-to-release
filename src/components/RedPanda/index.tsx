@@ -1,14 +1,13 @@
 import { useEffect, useRef } from 'react'
+import styled from 'styled-components'
 import gsap from 'gsap'
-import { GSDevTools } from 'gsap/GSDevTools'
 
-gsap.registerPlugin(GSDevTools)
-const Panda = () => {
+export function RedPanda() {
   const tailRef = useRef(null)
 
   useEffect(() => {
     gsap.to(tailRef.current, {
-      rotation: 20, // מנפנף בזנב
+      rotation: 20, // Wags the tail
       yoyo: true,
       repeat: -1,
       duration: 0.5,
@@ -16,17 +15,17 @@ const Panda = () => {
     })
   }, [])
 
-  // צבעים כמשתנים
+  // Colors as variables
   const color = {
-    furColor: 'saddlebrown',
+    furColor: '#ff6600',
     eyePatchColor: 'black',
     eyeWhite: 'white',
     noseColor: 'black',
-    mouthColor: 'black',
-    pawColor: 'black',
+    mouthColor: 'rgb(15, 15, 15)',
+    pawColor: 'rgb(15, 15, 15)',
   }
 
-  // גדלים כמשתנים
+  // Sizes as variables
   const baseSize = 100
   const headSize = baseSize * 0.4
   const bodyWidth = baseSize * 0.65
@@ -42,10 +41,11 @@ const Panda = () => {
   const legWidth = baseSize * 0.22
   const legHeight = baseSize * 0.18
   const cyEye = '75'
+
   return (
-    <div className={`flex justify-center items-center h-screen bg-green-200`}>
-      <svg viewBox="0 0 200 225" width="400" height="400" className="relative">
-        {/* זנב */}
+    <ContainerStyled>
+      <SvgStyled viewBox="0 0 200 225">
+        {/* Tail */}
         <ellipse
           ref={tailRef}
           cx="40"
@@ -58,7 +58,7 @@ const Panda = () => {
           transform="rotate(-20, 40, 150)"
         />
 
-        {/* גוף */}
+        {/* Body */}
         <ellipse
           cx="100"
           cy="140"
@@ -69,7 +69,7 @@ const Panda = () => {
           strokeWidth="4"
         />
 
-        {/* ראש */}
+        {/* Head */}
         <circle
           cx="100"
           cy="80"
@@ -79,7 +79,7 @@ const Panda = () => {
           strokeWidth="4"
         />
 
-        {/* כתמים שחורים סביב העיניים */}
+        {/* Eye patches */}
         <ellipse
           cx="80"
           cy={cyEye}
@@ -97,7 +97,7 @@ const Panda = () => {
           opacity="0.6"
         />
 
-        {/* עיניים */}
+        {/* Eyes */}
         <circle cx="80" cy={cyEye} r={eyeSize * 0.4} fill={color.eyeWhite} />
         <circle cx="120" cy={cyEye} r={eyeSize * 0.4} fill={color.eyeWhite} />
         <circle
@@ -113,7 +113,7 @@ const Panda = () => {
           fill={color.eyePatchColor}
         />
 
-        {/* אף */}
+        {/* Nose */}
         <ellipse
           cx="100"
           cy="95"
@@ -122,7 +122,7 @@ const Panda = () => {
           fill={color.noseColor}
         />
 
-        {/* פה */}
+        {/* Mouth */}
         <path
           d="M 90 105 Q 100 115, 110 105"
           stroke={color.mouthColor}
@@ -130,7 +130,7 @@ const Panda = () => {
           fill="none"
         />
 
-        {/* אוזניים */}
+        {/* Ears */}
         <circle
           cx="70"
           cy="50"
@@ -148,7 +148,7 @@ const Panda = () => {
           strokeWidth="3"
         />
 
-        {/* ידיים */}
+        {/* Hands */}
         <ellipse
           cx="50"
           cy="130"
@@ -164,7 +164,7 @@ const Panda = () => {
           fill={color.pawColor}
         />
 
-        {/* רגליים */}
+        {/* Legs */}
         <ellipse
           cx="80"
           cy="180"
@@ -179,9 +179,23 @@ const Panda = () => {
           ry={legHeight}
           fill={color.pawColor}
         />
-      </svg>
-    </div>
+      </SvgStyled>
+    </ContainerStyled>
   )
 }
+// Styled component for the container
+const ContainerStyled = styled.div`
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 140, 255, 0.25);
+  border-radius: 12px;
+`
 
-export { Panda }
+// Styled component for the SVG
+const SvgStyled = styled.svg`
+  width: 400px;
+  height: 400px;
+  position: relative;
+`

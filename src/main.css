@@ -20,13 +20,39 @@ body {
   justify-content: center;
   place-items: center;
   width: 100vw;
-  background-image: url('./assets//bg-Desktop.png');
+  background-image: url('./assets/bg-Desktop.png');
   filter: grayscale(20%);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
   height: 100vh;
 }
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  body {
+    background-size: contain;
+    height: auto;
+    padding: 1rem;
+    background-repeat: initial;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -39,6 +65,7 @@ body {
     background-color: #f9f9f9;
   }
 }
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
